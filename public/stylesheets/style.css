@@ -6,3 +6,9 @@ section > div        { padding: 20px; }
 header, nav, section { background: #eee; text-align: center;}
 footer               { background: #eee; text-align: center;}
 nav span             { margin: 0px 10px 0px 0px;}
+img.autor {
+    margin: auto;
+    padding: 2em;
+    border:3px solid #ABCDEF;
+    width: 6em;
+}
