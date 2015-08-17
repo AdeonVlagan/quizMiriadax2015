@@ -11,12 +11,12 @@ var models = require('../models/models.js');
  		{ texto: req.body.comment.texto,
  		  QuizId: req.params.quizId
  		});
-    
+
  	comment.validate()
  	.then(
  		function(err){
  			if (err) {
- 				res.render('comments/new.ejs', {comment: comment, quizid: req.params.quizId, errors: errores});
+ 				res.render('comments/new.ejs', {comment: comment, quizid: req.params.quizId, errors: err.errors});
  			} else {
  				comment // save: guarda en DB campo texto de comment
  				.save()
