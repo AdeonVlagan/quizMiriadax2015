@@ -38,6 +38,8 @@ app.use(function(req, res, next) {
 
   // Hacer visible req.session en las vistas
   res.locals.session = req.session;
+  res.locals.session.last_timestamp = req.session.new_timestamp;
+  res.locals.session.new_timestamp = new Date().toUTCString();
   next();
 });
 
