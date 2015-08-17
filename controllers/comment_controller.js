@@ -19,11 +19,10 @@ exports.create = function(req, res) {
       if (err) {
         res.render('comments/new.ejs', {comment: comment, errors: err.errors});
       } else {
-        comment // save: guarda en DB campo texto de comment
+        comment
         .save()
-        .then( function(){ res.redirect('/quizes/'+req.params.quizId)})
+        .then( function(){ res.redirect('/quizes/' + req.params.quizId)})
       }      // res.redirect: Redirección HTTP a lista de preguntas
     }
   ).catch(function(error){next(error)});
-
 };
