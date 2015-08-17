@@ -30,8 +30,11 @@ exports.index = function(req, res) {
 
 // GET /quizes/:id
 exports.show = function(req, res) {
-  res.render('quizes/show', { quiz: req.quiz, errors: []});
-};            // req.quiz: instancia de quiz cargada con autoload
+  //res.render('quizes/show', {quiz: req.quiz, errors: []});
+  models.Quiz.findById(req.params.quizId).then(function (quiz){
+    res.render('quizes/show', {quiz: req.quiz, errors: []});
+  });
+}
 
 // GET /quizes/:id/answer
 exports.answer = function(req, res) {
